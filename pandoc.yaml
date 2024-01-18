@@ -1,0 +1,13 @@
+from: commonmark_x
+to: html5
+input-file: README.md
+output-file: index.xhtml
+sandbox: true
+shift-heading-level-by: -1
+standalone: true
+template: template.xhtml
+variables:
+  document-css: false
+toc: true
+css:
+  - main.css

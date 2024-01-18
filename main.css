@@ -1,0 +1,98 @@
+* {
+  box-sizing: border-box; /* make css sane! */
+  font-family: sans-serif;
+}
+
+body {
+  display: flex;
+  height: 100vh;
+  margin: 0;
+}
+
+#hamburger {
+  visibility: collapse;
+}
+
+#floating-hamburger > img {
+  position: fixed;
+  top: 8px;
+  left: 8px;
+
+  padding: 8px;
+
+  background: oklch(98% 0 0deg);
+  border-radius: 8px;
+}
+
+#sidebar-hamburger {
+  align-self: end;
+  margin: 8px;
+}
+
+#sidebar {
+  position: fixed;
+
+  display: none;
+  flex-direction: column;
+
+  min-width: 12em;
+  height: 100vh;
+
+  background: oklch(98% 0 0deg);
+}
+
+#hamburger:checked ~ #floating-hamburger {
+  display: none;
+}
+
+#hamburger:checked ~ #sidebar {
+  display: flex;
+}
+
+nav {
+  overflow-y: scroll;
+}
+
+nav ul {
+  margin: 0;
+  padding: 0 8px;
+  list-style: none;
+}
+
+nav li > a {
+  display: block;
+
+  padding: 8px;
+
+  color: unset;
+  text-decoration: unset;
+
+  border-radius: 8px;
+}
+
+nav li > a:hover {
+  background: oklch(90% 0 0deg);
+}
+
+main {
+  overflow-y: scroll;
+  grid-area: main;
+  padding: 0 32px;
+}
+
+pre {
+  padding: 8px;
+}
+
+code,
+pre {
+  font-family: monospace;
+  background: oklch(95% 0 0deg);
+  border-radius: 8px;
+}
+
+@media (width >= 48em) {
+  #sidebar {
+    position: unset;
+  }
+}
